@@ -21,7 +21,6 @@ import static com.codeborne.selenide.Selenide.*;
 )
 
 public class TestRunner extends AbstractTestNGCucumberTests {
-    ShopPage shopPage = new ShopPage();
 
     @BeforeClass
     public static void setUpAll() {

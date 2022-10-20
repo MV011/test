@@ -1,5 +1,5 @@
 Feature: Cart
-  Scenario: user can four add products to cart and edit cart
+  Scenario: user can add four products to cart and edit cart
     Given I add four random items to my cart
     When I view my cart
     Then I find total four items listed in my cart

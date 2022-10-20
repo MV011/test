@@ -1,7 +1,9 @@
 package com.example.test.pages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
+import com.example.test.utils.Utils;
 
 import java.util.HashSet;
 import java.util.Iterator;
@@ -20,27 +22,15 @@ public class ShopPage {
     public SelenideElement cartButton = $(".nav-menu li:first-of-type");
 
     public String addToCartButtonSelector = ".add_to_cart_button";
+    public String addedToCartSelector = ".added_to_cart";
 
     public void addRandomProductsToCart(int productCount) {
 
-        Set<Integer> randomNumbers = new HashSet<>();
 
-        while(randomNumbers.size() < productCount) {
-            randomNumbers.add(ThreadLocalRandom.current().nextInt(0, productTiles.size()));
-        }
-
-        for (Integer randomNumber : randomNumbers) {
-            SelenideElement element = this.productTiles.get(randomNumber);
-            element.hover();
-            element.$(addToCartButtonSelector).click();
-            if(WebDriverRunner.getWebDriver().getCurrentUrl().contains("product")) {
-                $(".single_add_to_cart_button.button").click();
-                WebDriverRunner.getWebDriver().navigate().back();
-            }
-        }
     }
 
     public void clickViewCart() {
+        Utils.scrollToTop();
         cartButton.click();
     }
 }
