@@ -33,4 +33,4 @@ How to run (assumes Maven and Allure were already added to the system path)
 2. Open a terminal
 3. Navigate to the project's root folder
 4. Run `mvn clean test`
-5. Run `allure serve allure-results`
+5. Run `allure serve allure-results` to view reports
