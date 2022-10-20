@@ -20,7 +20,7 @@ public class CartPageStepDefinitions {
         this.cartPage.countCartItems(4);
     }
 
-    @Then("When I search for lowest price item")
+    @When("I search for lowest price item")
     public void findLowestPriceItem() {
         this.cartPage.getLowestPriceItemIndex();
     }
